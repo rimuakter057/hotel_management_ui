@@ -1,6 +1,6 @@
 # Hotel Management App 📖
 
-An Islamic app to read and explore the Quran and Hadis.
+
 
 ## 🖼 App Screenshots
 
