@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hotel_management/app/ui/utils/color.dart';
 
 class ProfileOptionWidget extends StatelessWidget {
   final IconData icon;
@@ -25,9 +26,9 @@ class ProfileOptionWidget extends StatelessWidget {
         margin: EdgeInsets.symmetric(vertical: screenWidth * 0.015),
         padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.04),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: AppColors.tealShade,
           borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: Color(0xFFE8E8E8), width: 1),
+          border: Border.all(color: const Color(0xFFE8E8E8), width: 1),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -39,18 +40,19 @@ class ProfileOptionWidget extends StatelessWidget {
                   width: screenHeight * 0.03,  // ~24
                   child: Icon(icon, color: Colors.black),
                 ),
-                SizedBox(width: 8),
+                const SizedBox(width: 8),
                 Text(
                   title,
                   style: TextStyle(
-                    fontSize: screenWidth * 0.04, // ~16 on 400 width
+                    fontSize: screenWidth * 0.05, // ~16 on 400 width
                     fontFamily: 'Poppins',
                     fontWeight: FontWeight.w400,
+                    color: AppColors.whiteColor
                   ),
                 ),
               ],
             ),
-            Icon(Icons.chevron_right, color: Colors.black),
+            const Icon(Icons.chevron_right, color: Colors.black),
           ],
         ),
       ),

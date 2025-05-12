@@ -6,21 +6,19 @@ import 'package:hotel_management/app/ui/screens/BookingSummaryScreen/booking_sum
 import 'package:hotel_management/app/ui/screens/EmployeeListScreen/employee_list_screen.dart';
 import 'package:hotel_management/app/ui/screens/HomeScreen/home_screen.dart';
 import 'package:hotel_management/app/ui/screens/HotelDetailsScreen/hotel_details_screen.dart';
-import 'package:hotel_management/app/ui/screens/OptionScreen/option_screen.dart';
 import 'package:hotel_management/app/ui/screens/login_screen.dart';
 import 'package:hotel_management/app/ui/screens/main_nav_screen/main_nav_screen.dart';
 import 'package:hotel_management/app/ui/screens/splash_screen.dart';
 
 class RoutePages{
 List <GetPage<dynamic>> routes = [
-  GetPage(name: RoutesName.splash, page:()=>SplashScreen()),
-  GetPage(name: RoutesName.login, page:()=>LoginScreen()),
-  GetPage(name: RoutesName.mainNav, page:()=>MainNavScreen()),
-  GetPage(name: RoutesName.home, page:()=>HomeScreen()),
-  GetPage(name: RoutesName.option, page:()=>OptionScreen()),
-  GetPage(name: RoutesName.allOption, page:()=>AllOptionScreen()),
-  GetPage(name: RoutesName.employeeList, page:()=>EmployeeListScreen()),
-  GetPage(name: RoutesName.hotelDetails, page:()=>HotelDetailsScreen()),
-  GetPage(name: RoutesName.bookingSummary, page:()=>BookingSummaryScreen())
+  GetPage(name: RoutesName.splash, page:()=>const SplashScreen()),
+  GetPage(name: RoutesName.login, page:()=>const LoginScreen()),
+  GetPage(name: RoutesName.mainNav, page:()=>const MainNavScreen()),
+  GetPage(name: RoutesName.home, page:()=>const HomeScreen()),
+  GetPage(name: RoutesName.allOption, page:()=>const AllOptionScreen()),
+  GetPage(name: RoutesName.employeeList, page:()=>const EmployeeListScreen()),
+  GetPage(name: RoutesName.hotelDetails, page:()=>const HotelDetailsScreen(hotelName: '', rate: '', price: '',)),
+  GetPage(name: RoutesName.bookingSummary, page:()=>const BookingSummaryScreen())
 ];
 }

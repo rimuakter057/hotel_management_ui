@@ -10,24 +10,26 @@ class Description extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text("Description",style:MyTextStyle.largeDetailsText,),
-    SingleChildScrollView(
-      child: ReadMoreText(
-      AppText.descriptionText,
-      trimMode: TrimMode.Line,
-      style:MyTextStyle.smallDetailsText ,
-      trimLines: 3,
-      colorClickableText: Colors.pink,
-      trimCollapsedText: 'Show more',
-      trimExpandedText: 'Show less',
-      moreStyle:MyTextStyle.textFieldStyle.copyWith(fontWeight: FontWeight.bold),
-        lessStyle: MyTextStyle.textFieldStyle.copyWith(fontWeight: FontWeight.bold,color: AppColors.yellowShade),
+    return  SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("Description",style:MyTextStyle.largeDetailsText,),
+      SingleChildScrollView(
+        child: ReadMoreText(
+        AppText.descriptionText,
+        trimMode: TrimMode.Line,
+        style:MyTextStyle.smallDetailsText ,
+        trimLines: 3,
+        colorClickableText: Colors.pink,
+        trimCollapsedText: 'Show more',
+        trimExpandedText: 'Show less',
+        moreStyle:MyTextStyle.textFieldStyle.copyWith(fontWeight: FontWeight.bold),
+          lessStyle: MyTextStyle.textFieldStyle.copyWith(fontWeight: FontWeight.bold,color: AppColors.yellowShade),
+        ),
+      )
+        ],
       ),
-    )
-      ],
     );
   }
 }

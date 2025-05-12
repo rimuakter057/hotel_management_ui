@@ -18,8 +18,10 @@ class BookingSummaryScreen extends StatelessWidget {
         backgroundColor: AppColors.tealColor,
         centerTitle: true,
         title: const Text("Booking Summary",style: MyTextStyle.appbarText,),
-        leading: IconButton(onPressed: (){},
-            icon:Icon(Icons.arrow_back,color: AppColors.whiteColor,size: AllIconSize.appBarArrow,)),
+        leading: IconButton(onPressed: (){
+          Navigator.pop(context);
+        },
+            icon:const Icon(Icons.arrow_back,color: AppColors.whiteColor,size: AllIconSize.appBarArrow,)),
       ),
       body:Padding(
         padding: const EdgeInsets.all(30.0),
@@ -30,20 +32,25 @@ class BookingSummaryScreen extends StatelessWidget {
               width: size.width*.45,
               decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              image: DecorationImage(image:AssetImage(ImageUrl.hotelSix),fit: BoxFit.cover),
+              image: const DecorationImage(image:AssetImage(ImageUrl.hotelSix),fit: BoxFit.cover),
             ),),
             SizedBox(width: size.width*.02,),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-              const Text("AYANA Resort",style: MyTextStyle.largeDetailsText,),
+              const Text("AYANA Resort",
+                style: TextStyle(
+                    color: AppColors.blackColor,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w800
+                )),
               const Text("Address Here",style: MyTextStyle.smallDetailsText,),
               Row(
                 children: [
                   Text(
                     "\$350 USD/",
                     style: MyTextStyle.largeDetailsText.copyWith(
-                        color: AppColors.tealColor, fontWeight: FontWeight.bold),
+                        color: AppColors.tealColor, fontWeight: FontWeight.bold,fontSize: 14),
                   ),
                   const Text(" Night", style: MyTextStyle.smallDetailsText),
                 ],
@@ -64,7 +71,7 @@ class BookingSummaryScreen extends StatelessWidget {
                  Text(
                    getSummary.bookingSummaryList[index].value,style: MyTextStyle.smallDetailsText,)
                ],),
-               Divider(),
+               const Divider(),
              ],
            );
          })

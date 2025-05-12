@@ -22,10 +22,10 @@ class _MainNavScreenState extends State<MainNavScreen> {
 
   final List<Widget> _screens = [
 
-    HomeScreen(),
-    AllOptionScreen(),
-    EmployeeListScreen(),
-    ProfileScreen(),
+    const HomeScreen(),
+    const AllOptionScreen(),
+    const EmployeeListScreen(),
+    const ProfileScreen(),
   ];
 
   void _onItemTapped(int index) {

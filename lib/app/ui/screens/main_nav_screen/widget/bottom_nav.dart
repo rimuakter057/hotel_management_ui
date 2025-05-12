@@ -20,7 +20,7 @@ class CustomBottomNavBar extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
 
     return BottomNavigationBar(
-      backgroundColor: AppColors.pinkShadeTwo,
+      backgroundColor: AppColors.tealShade,
       currentIndex: currentIndex,
       onTap: onTap,
       selectedItemColor: AppColors.tealColor,
@@ -35,8 +35,8 @@ class CustomBottomNavBar extends StatelessWidget {
           label: "home",
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.alarm),
-          label: "sos",
+          icon: Icon(Icons.hotel),
+          label: "all services",
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.verified_user),

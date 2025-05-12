@@ -11,18 +11,15 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
-/*
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     _navigateToNextScreen();
   }
-*/
 
-  Future <void> _navigateToNextScreen() async {
-    await Future.delayed(Duration(seconds: 2));
+  Future<void> _navigateToNextScreen() async {
+    await Future.delayed(const Duration(seconds: 2));
     Navigator.pushReplacementNamed(context, RoutesName.login);
   }
 
@@ -32,19 +29,17 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-            image: DecorationImage(image: const AssetImage(ImageUrl.splash),
+            image: DecorationImage(
+                image: const AssetImage(ImageUrl.splash),
                 fit: BoxFit.cover,
-                colorFilter: ColorFilter.mode(Colors.black.withOpacity(.1),
-                    BlendMode.color
-                )
-            )
-        ),
+                colorFilter: ColorFilter.mode(
+                    Colors.black.withOpacity(.1), BlendMode.color))),
         alignment: Alignment.center,
-        child: Image.asset(ImageUrl.splashText,
-        height:size.height*.15 ,
-          width: size.width*.9,
+        child: Image.asset(
+          ImageUrl.splashText,
+          height: size.height * .15,
+          width: size.width * .9,
         ),
-
       ),
     );
   }

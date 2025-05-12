@@ -38,7 +38,7 @@ class AllOptionController extends GetxController {
         firstColor: AppColors.blueShade,
         secondColor: AppColors.blueShadeTwo,
         assetImage: IconUrl.agentList,
-        text: AppText.deleteList),
+        text: "booking summary"),
   ].obs;
 
 }

@@ -1,14 +1,11 @@
 
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:hotel_management/app/ui/screens/login_screen.dart';
-
 import '../../../utils/app_text.dart';
 import '../../../widgets/custom_button.dart';
 import '../widget/profile_option.dart';
 import '../widget/profile_widget.dart';
-import 'change_password_screen.dart';
-import 'edit_profile_screen.dart';
+
 
 
 class ProfileScreen extends StatefulWidget {
@@ -43,21 +40,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
       child: Column(
         children: [
                ProfileOptionWidget(
-            icon: Icons.lock_outline,
+            icon: Icons.info,
             title: "Personal Information",
             onTap: () {
               print("onTap Personal Information==================");
             },
           ),
           ProfileOptionWidget(
-            icon: Icons.lock_outline,
+            icon: Icons.edit,
             title: "Edit Profile",
             onTap: () {
               print("onTapEdit Profile==================");
             },
           ),
           ProfileOptionWidget(
-            icon: Icons.lock_outline,
+            icon: Icons.password,
             title: "Change Password",
             onTap: () {
               print("onTap Change Password==================");
@@ -65,7 +62,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             },
           ),
           ProfileOptionWidget(
-            icon: Icons.lock_outline,
+            icon: Icons.help,
             title: "Help Center",
             onTap: () {
               print("helpCenter==================");
@@ -74,7 +71,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             },
           ),
           ProfileOptionWidget(
-            icon: Icons.lock_outline,
+            icon: Icons.privacy_tip_outlined,
             title: "Privacy Policy",
             onTap: () {
 

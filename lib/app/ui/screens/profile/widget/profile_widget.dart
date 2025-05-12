@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hotel_management/app/ui/utils/color.dart';
 
 
 
@@ -38,7 +39,8 @@ class ProfileWidget extends StatelessWidget {
           Text(
             name??"RIMU",
             style: TextStyle(
-              fontSize: fontSizeName,
+              color: AppColors.tealColor,
+              fontSize: 30,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -47,8 +49,8 @@ class ProfileWidget extends StatelessWidget {
           Text(
             subtitle??"App Developer",
             style: TextStyle(
-              fontSize: fontSizeSubtitle,
-              color: Colors.grey[600],
+              fontSize: 20,
+              color: AppColors.blackColor,
             ),
           ),
         ],

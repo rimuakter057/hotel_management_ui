@@ -4,7 +4,6 @@ import 'package:hotel_management/app/routes/route_names.dart';
 import 'package:hotel_management/app/routes/route_pages.dart';
 import 'package:hotel_management/app/ui/utils/color.dart';
 
-import 'app/ui/screens/EmployeeListScreen/employee_list_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,7 +38,7 @@ class MyApp extends StatelessWidget {
        )
      ),
      getPages: RoutePages().routes,
-      initialRoute: RoutesName.mainNav,
+      initialRoute: RoutesName.splash,
     );
   }
 }

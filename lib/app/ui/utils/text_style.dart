@@ -33,12 +33,12 @@ class MyTextStyle {
   );
   static const TextStyle appbarText = TextStyle(
       color: AppColors.whiteColor,
-      fontSize: 30,
-      fontWeight: FontWeight.w600
+      fontSize: 24,
+      fontWeight: FontWeight.w500
   );
   static const TextStyle largeDetailsText = TextStyle(
       color: AppColors.blackColor,
-      fontSize: 30,
+      fontSize: 20,
       fontWeight: FontWeight.w600
   );
   static const TextStyle smallDetailsText = TextStyle(
