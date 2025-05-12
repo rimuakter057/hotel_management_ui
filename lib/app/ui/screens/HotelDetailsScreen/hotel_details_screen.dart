@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hotel_management/app/ui/utils/all_icon_size.dart';
 import 'package:hotel_management/app/ui/utils/app_text.dart';
 import 'package:hotel_management/app/ui/utils/color.dart';
@@ -25,7 +26,9 @@ class HotelDetailsScreen extends StatelessWidget {
           style: MyTextStyle.appbarText,
         ),
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+            Navigator.pop(context);
+            },
             icon: const Icon(
               Icons.arrow_back,
               color: AppColors.whiteColor,

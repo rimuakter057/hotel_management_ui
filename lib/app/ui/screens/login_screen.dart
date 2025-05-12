@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hotel_management/app/ui/screens/HomeScreen/home_screen.dart';
 import 'package:hotel_management/app/ui/utils/app_text.dart';
 import 'package:hotel_management/app/ui/utils/image_url.dart';
 import 'package:hotel_management/app/ui/utils/text_style.dart';
@@ -48,6 +49,8 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 CustomButton(size: size, buttonName: AppText.logIn,onTap: (){
+
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
                   print("login");
                 },),
                 gap,

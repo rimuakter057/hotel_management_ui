@@ -8,12 +8,14 @@ import 'package:hotel_management/app/ui/screens/HomeScreen/home_screen.dart';
 import 'package:hotel_management/app/ui/screens/HotelDetailsScreen/hotel_details_screen.dart';
 import 'package:hotel_management/app/ui/screens/OptionScreen/option_screen.dart';
 import 'package:hotel_management/app/ui/screens/login_screen.dart';
+import 'package:hotel_management/app/ui/screens/main_nav_screen/main_nav_screen.dart';
 import 'package:hotel_management/app/ui/screens/splash_screen.dart';
 
 class RoutePages{
 List <GetPage<dynamic>> routes = [
   GetPage(name: RoutesName.splash, page:()=>SplashScreen()),
   GetPage(name: RoutesName.login, page:()=>LoginScreen()),
+  GetPage(name: RoutesName.mainNav, page:()=>MainNavScreen()),
   GetPage(name: RoutesName.home, page:()=>HomeScreen()),
   GetPage(name: RoutesName.option, page:()=>OptionScreen()),
   GetPage(name: RoutesName.allOption, page:()=>AllOptionScreen()),

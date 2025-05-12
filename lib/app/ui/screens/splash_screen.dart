@@ -1,8 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:hotel_management/app/ui/utils/image_url.dart';
 
-class SplashScreen extends StatelessWidget {
+import '../../routes/route_names.dart';
+
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+
+/*
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _navigateToNextScreen();
+  }
+*/
+
+  Future <void> _navigateToNextScreen() async {
+    await Future.delayed(Duration(seconds: 2));
+    Navigator.pushReplacementNamed(context, RoutesName.login);
+  }
 
   @override
   Widget build(BuildContext context) {

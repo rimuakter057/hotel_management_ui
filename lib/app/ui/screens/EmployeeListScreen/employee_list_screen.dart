@@ -7,12 +7,47 @@ import 'package:hotel_management/app/ui/utils/icon_url.dart';
 import 'package:hotel_management/app/ui/utils/image_url.dart';
 import 'package:hotel_management/app/ui/utils/text_style.dart';
 
+import '../../utils/all_icon_size.dart';
+
 class EmployeeListScreen extends StatelessWidget {
   const EmployeeListScreen({super.key});
   @override
   Widget build(BuildContext context) {
     final getData = Get.put(EmployeeListController());
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: AppColors.tealColor,
+        title: Text(
+          AppText.employeeList,
+          style: MyTextStyle.appbarText,
+        ),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(
+              Icons.arrow_back,
+              color: AppColors.whiteColor,
+              size: AllIconSize.appBarArrow,
+            )),
+        actions: [
+          IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.share,
+                color: AppColors.whiteColor,
+                size: AllIconSize.appBarShear,
+              )),
+          IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.favorite_border,
+                color: AppColors.whiteColor,
+                size: AllIconSize.appBarFavourite,
+              )),
+        ],
+      ),
       body: SingleChildScrollView(
         child: Column(
          children: [

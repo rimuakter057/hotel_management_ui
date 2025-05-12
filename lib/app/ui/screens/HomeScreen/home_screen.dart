@@ -6,6 +6,8 @@ import 'package:hotel_management/app/ui/utils/color.dart';
 import 'package:hotel_management/app/ui/utils/image_url.dart';
 import 'package:hotel_management/app/ui/utils/text_style.dart';
 
+import '../HotelDetailsScreen/hotel_details_screen.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -139,18 +141,23 @@ class HomeScreen extends StatelessWidget {
                                   children: [
                                     Stack(
                                       children: [
-                                        Container(
-                                          height: size.height * .2,
-                                          width: size.width * .35,
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(20),
-                                            color: Colors.red,
-                                          ),
-                                          child: Image.asset(
-                                            hotelNameData.hotelNameList[index].image,
+                                        GestureDetector(
+                                          onTap: () {
+                                            Get.to(HotelDetailsScreen());
+                                          },
+                                          child: Container(
                                             height: size.height * .2,
                                             width: size.width * .35,
-                                            fit: BoxFit.fill,
+                                            decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.circular(20),
+                                              color: Colors.red,
+                                            ),
+                                            child: Image.asset(
+                                              hotelNameData.hotelNameList[index].image,
+                                              height: size.height * .2,
+                                              width: size.width * .35,
+                                              fit: BoxFit.fill,
+                                            ),
                                           ),
                                         ),
                                         Positioned(
