@@ -64,29 +64,40 @@ class HomeScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          const SizedBox(height: 8,),
                           Row(
                             children: [
                               const Text(
                                 "City Name",
-                                style: MyTextStyle.largeDetailsText,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 18,
+                                    color: AppColors.blackColor
+                                )
                               ),
                               const Spacer(),
                               Text(
                                 "View All",
-                                style: MyTextStyle.textFieldStyle
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 14,
+                                    color: AppColors.tealColor
+                                )
                               ),
                             ],
                           ),
+
+                    const SizedBox(height: 8,),
                           //place name
                           SizedBox(
-                            height: size.height * .15,
+                            height: 80,
                             child: ListView.builder(
                                 itemCount: placeData.homeDistrictList.length,
                                 shrinkWrap: true,
                                 scrollDirection: Axis.horizontal,
                                 itemBuilder: (context, index) {
                                   return Padding(
-                                    padding: const EdgeInsets.all(8.0),
+                                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
                                     child: Column(
                                       children: [
                                         Container(
@@ -98,16 +109,18 @@ class HomeScreen extends StatelessWidget {
                                           ),
                                           child: Image.asset(
                                             placeData.homeDistrictList[index].image,
-                                            height: size.height * .06,
+                                            height: size.height * .04,
                                             width: size.width * .18,
                                             fit: BoxFit.fill,
                                           ),
                                         ),
                                         Text(
                                           placeData.homeDistrictList[index].name,
-                                          style: MyTextStyle.textFieldStyle
-                                              .copyWith(
-                                              fontWeight: FontWeight.bold),
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.w400,
+                                                fontSize: 16,
+                                                color: AppColors.blackColor
+                                            )
                                         )
                                       ],
                                     ),
@@ -116,18 +129,21 @@ class HomeScreen extends StatelessWidget {
                           ),
                           const Text(
                             "Hotel Near You",
-                            style: MyTextStyle.largeDetailsText,
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 18,
+                                  color: AppColors.blackColor
+                              )
                           ),
                           //card
                           Expanded(
                             child: GridView.builder(
-                              itemCount: placeData.homeDistrictList.length,
-                              padding: const EdgeInsets.all(8),
+
                               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 2,
                                 crossAxisSpacing: 10,
                                 mainAxisSpacing: 10,
-                                childAspectRatio: 0.7,
+                                childAspectRatio: 0.8,
                               ),
                               itemBuilder: (context, index) {
                                 return GestureDetector(
@@ -225,13 +241,28 @@ class HomeScreen extends StatelessWidget {
                                                 ],
                                               ),
                                                const SizedBox(height: 4),
-                                              Text(
-                                                "Price: ${hotelNameData.hotelNameList[index].price}",
-                                                style: MyTextStyle.smallDetailsText.copyWith(
-                                                  fontSize: 12,
-                                                  fontWeight: FontWeight.bold
-                                                ),
+                                              Row(
+                                                children: [
+                                                  Text(
+                                                    "Price: ",
+                                                      style: TextStyle(
+                                                          fontWeight: FontWeight.w500,
+                                                          fontSize: 16,
+                                                          color: AppColors.blackColor
+                                                      )
+                                                  ),
+
+                                                  Text(
+                                                     hotelNameData.hotelNameList[index].price,
+                                                      style: TextStyle(
+                                                          fontWeight: FontWeight.w700,
+                                                          fontSize: 18,
+                                                          color: AppColors.tealColor
+                                                      )
+                                                  ),
+                                                ],
                                               ),
+
                                             ],
                                           ),
                                         ),

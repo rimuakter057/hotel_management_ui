@@ -43,7 +43,7 @@ class AllOptionScreen extends StatelessWidget {
                       fit: BoxFit.fill,
                     ),
                     CustomIconCircle(
-                      size: size,
+
                       icon: IconUrl.edit,
                     ),
                   ],

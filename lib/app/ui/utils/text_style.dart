@@ -33,7 +33,7 @@ class MyTextStyle {
   );
   static const TextStyle appbarText = TextStyle(
       color: AppColors.whiteColor,
-      fontSize: 24,
+      fontSize: 18,
       fontWeight: FontWeight.w500
   );
   static const TextStyle largeDetailsText = TextStyle(

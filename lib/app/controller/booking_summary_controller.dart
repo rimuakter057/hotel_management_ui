@@ -26,7 +26,7 @@ class BookingSummaryController extends GetxController{
         value: "\$30"
     ),
     BookingSummaryModel(title:"Total",
-        value: "\$700"
+        value: "\$730"
     ),
   ].obs;
 }

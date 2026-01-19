@@ -36,12 +36,13 @@ final String rate;
           child: Center(child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(Icons.star,color: Colors.white,size: 18,),
-              const Icon(Icons.star,color: Colors.white,size: 18,),
+              const Icon(Icons.star,color: Colors.amber,size: 18,),
+              const Icon(Icons.star,color: Colors.amber,size: 18,),
               Text(rate,style: MyTextStyle.textFieldStyle.copyWith(color: AppColors.whiteColor,fontSize: 14),),
             ],
           )),
         ),
+        SizedBox(width: 4,),
         Text("(25 reviews)",style:MyTextStyle.textFieldStyle.copyWith(fontSize: 14,color: Colors.grey),),
       ],
     );

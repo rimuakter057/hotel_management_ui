@@ -79,33 +79,42 @@ class HotelDetailsScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              height: size.height * .35,
-              width: size.width,
-              decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage(
-                        ImageUrl.hotelSix,
-                      ),
-                      fit: BoxFit.cover)),
-            ),
-            Padding(
-              padding: EdgeInsets.all(size.height * .02),
-              child: Column(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const SizedBox(height: 8,),
+                  ///image
+              Container(
+
+                height: size.height * .3,
+                width: size.width,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    image: const DecorationImage(
+                        image: AssetImage(
+                          ImageUrl.hotelSix,
+                        ),
+                        fit: BoxFit.cover)),
+              ),
+              const SizedBox(height: 12,),
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  ///name
                   Row(
                     children: [
                        Text(
                         hotelName,
-                        style: MyTextStyle.largeDetailsText,
+                           style:const TextStyle(
+                               fontWeight: FontWeight.w600,
+                               fontSize: 18,
+                               color: AppColors.blackColor
+                           )
                       ),
                       const Spacer(),
-                      CustomIconCircle(
-                        size: size,
+                      const CustomIconCircle(
                         icon: IconUrl.exactLocation,
                       ),
                     ],
@@ -120,14 +129,21 @@ class HotelDetailsScreen extends StatelessWidget {
                   ),
                   Text(
                     "Contact Info",
-                    style: MyTextStyle.largeDetailsText
-                        .copyWith(color: AppColors.tealColor),
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                        color: AppColors.tealColor
+                    )
                   ),
                   Card(
                     elevation: 5,
                     shadowColor: AppColors.blackColor,
                     child: ListTile(
-                      title: const Text("Manager", style: MyTextStyle.largeDetailsText),
+                      title: const Text("Manager", style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 18,
+                          color: AppColors.blackColor
+                      )),
                       subtitle: const Text(
                         "Reception",
                         style: MyTextStyle.smallDetailsText,
@@ -135,18 +151,15 @@ class HotelDetailsScreen extends StatelessWidget {
                       trailing: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          CustomIconCircle(
-                              size: size,
-                              height: 25,
-                              width: 25,
+                          const CustomIconCircle(
+
+
                               icon: IconUrl.call),
                           SizedBox(
                             width: size.width * .02,
                           ),
                           CustomIconCircle(
-                              size: size,
-                              height: 25,
-                              width: 25,
+
                               icon: IconUrl.email),
                         ],
                       ),
@@ -163,8 +176,8 @@ class HotelDetailsScreen extends StatelessWidget {
                   const Text("Night", style: MyTextStyle.smallDetailsText),
                 ],
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

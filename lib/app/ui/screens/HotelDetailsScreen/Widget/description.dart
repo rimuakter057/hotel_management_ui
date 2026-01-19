@@ -14,19 +14,36 @@ class Description extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Description",style:MyTextStyle.largeDetailsText,),
+          Text("Description",
+              style:TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: 18,
+            color: AppColors.blackColor
+          )
+          ),
       SingleChildScrollView(
         child: ReadMoreText(
         AppText.descriptionText,
         trimMode: TrimMode.Line,
-        style:MyTextStyle.smallDetailsText ,
+        style:TextStyle(
+            fontWeight: FontWeight.w400,
+            fontSize: 14,
+            color: AppColors.blackColor
+        ) ,
         trimLines: 3,
         colorClickableText: Colors.pink,
         trimCollapsedText: 'Show more',
         trimExpandedText: 'Show less',
-        moreStyle:MyTextStyle.textFieldStyle.copyWith(fontWeight: FontWeight.bold),
-          lessStyle: MyTextStyle.textFieldStyle.copyWith(fontWeight: FontWeight.bold,color: AppColors.yellowShade),
+        moreStyle:TextStyle(
+            fontWeight: FontWeight.w400,
+            fontSize: 14,
+            color: AppColors.tealColor
         ),
+          lessStyle: TextStyle(
+              fontWeight: FontWeight.w400,
+              fontSize: 14,
+              color: AppColors.tealColor)
+          ),
       )
         ],
       ),

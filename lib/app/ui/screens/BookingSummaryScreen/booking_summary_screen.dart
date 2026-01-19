@@ -44,13 +44,21 @@ class BookingSummaryScreen extends StatelessWidget {
                     fontSize: 18,
                     fontWeight: FontWeight.w800
                 )),
-              const Text("Address Here",style: MyTextStyle.smallDetailsText,),
+              const Text("New York, NY 10118,\nUSA",
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14,
+                      color: AppColors.blackColor
+                  )
+              ),
               Row(
                 children: [
                   Text(
                     "\$350 USD/",
                     style: MyTextStyle.largeDetailsText.copyWith(
-                        color: AppColors.tealColor, fontWeight: FontWeight.bold,fontSize: 14),
+                        color: AppColors.tealColor, fontWeight: FontWeight.bold,fontSize: 16),
                   ),
                   const Text(" Night", style: MyTextStyle.smallDetailsText),
                 ],
@@ -66,10 +74,23 @@ class BookingSummaryScreen extends StatelessWidget {
            return Column(
              children: [
                Row(children: [
-                  Text(getSummary.bookingSummaryList[index].title,style: MyTextStyle.largeDetailsText,),
+                  Text(getSummary.bookingSummaryList[index].title,
+                      style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 18,
+                          color: AppColors.blackColor
+                      )
+
+                  ),
                  const Spacer(),
                  Text(
-                   getSummary.bookingSummaryList[index].value,style: MyTextStyle.smallDetailsText,)
+                   getSummary.bookingSummaryList[index].value,
+                     style: const TextStyle(
+                         fontWeight: FontWeight.w400,
+                         fontSize: 18,
+                         color: AppColors.blackColor
+                     )
+                 )
                ],),
                const Divider(),
              ],
