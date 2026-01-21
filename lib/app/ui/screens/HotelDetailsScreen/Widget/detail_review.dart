@@ -23,7 +23,7 @@ final String rate;
               color: AppColors.tealColor,
               borderRadius: BorderRadius.circular(5)
           ),
-          child: Text("10% off",style: MyTextStyle.buttonTextStyle.copyWith(fontSize: 14),),
+          child: Text("10% off",style: MyTextStyle.buttonTextStyle.copyWith(fontSize: 14,fontWeight: FontWeight.w400),),
         ),
         const SizedBox(width: 5,),
         Container(

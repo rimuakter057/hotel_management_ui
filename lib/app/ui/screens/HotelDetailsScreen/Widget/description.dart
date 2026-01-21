@@ -10,14 +10,14 @@ class Description extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  SingleChildScrollView(
+    return  const SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text("Description",
               style:TextStyle(
-            fontWeight: FontWeight.w600,
-            fontSize: 18,
+            fontWeight: FontWeight.w500,
+            fontSize: 16,
             color: AppColors.blackColor
           )
           ),

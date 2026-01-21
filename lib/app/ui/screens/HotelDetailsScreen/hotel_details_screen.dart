@@ -61,19 +61,25 @@ class HotelDetailsScreen extends StatelessWidget {
               topLeft: Radius.circular(10), bottomRight: Radius.circular(10)),
           color: AppColors.tealColor,
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(4.0),
+        child: const Padding(
+          padding:  EdgeInsets.all(4.0),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(
+               Icon(
                 Icons.takeout_dining_outlined,
                 color: AppColors.whiteColor,
               ),
-              const SizedBox(width: 2,),
+               SizedBox(width: 2,),
               Text(
                 overflow: TextOverflow.ellipsis,
                 "Book Now",
-                style: MyTextStyle.buttonTextStyle,
+                  style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 16,
+                      color: AppColors.whiteColor
+                  )
               ),
             ],
           ),
@@ -108,8 +114,8 @@ class HotelDetailsScreen extends StatelessWidget {
                        Text(
                         hotelName,
                            style:const TextStyle(
-                               fontWeight: FontWeight.w600,
-                               fontSize: 18,
+                               fontWeight: FontWeight.w500,
+                               fontSize: 16,
                                color: AppColors.blackColor
                            )
                       ),
@@ -127,11 +133,11 @@ class HotelDetailsScreen extends StatelessWidget {
                   SizedBox(
                     height: size.height * .02,
                   ),
-                  Text(
+                  const Text(
                     "Contact Info",
                     style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16,
                         color: AppColors.tealColor
                     )
                   ),
@@ -140,13 +146,18 @@ class HotelDetailsScreen extends StatelessWidget {
                     shadowColor: AppColors.blackColor,
                     child: ListTile(
                       title: const Text("Manager", style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 18,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 16,
                           color: AppColors.blackColor
-                      )),
+                      )
+                      ),
                       subtitle: const Text(
                         "Reception",
-                        style: MyTextStyle.smallDetailsText,
+                          style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 14,
+                              color: AppColors.blackColor
+                          )
                       ),
                       trailing: Row(
                         mainAxisSize: MainAxisSize.min,
@@ -158,7 +169,7 @@ class HotelDetailsScreen extends StatelessWidget {
                           SizedBox(
                             width: size.width * .02,
                           ),
-                          CustomIconCircle(
+                          const CustomIconCircle(
 
                               icon: IconUrl.email),
                         ],

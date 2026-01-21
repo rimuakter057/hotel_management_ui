@@ -283,6 +283,7 @@ class HomeScreen extends StatelessWidget {
 
               ///Recommended===================================================================================================
                               ListView.builder(
+                                padding: EdgeInsets.zero,
                                 shrinkWrap: true,
                                 physics: const NeverScrollableScrollPhysics(),
                                 itemCount: hotelNameData.hotelNameList.length + 1,
