@@ -41,8 +41,8 @@ class BookingSummaryScreen extends StatelessWidget {
               const Text("AYANA Resort",
                 style: TextStyle(
                     color: AppColors.blackColor,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w800
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500
                 )),
               const Text("New York, NY 10118,\nUSA",
                 maxLines: 2,
@@ -76,8 +76,8 @@ class BookingSummaryScreen extends StatelessWidget {
                Row(children: [
                   Text(getSummary.bookingSummaryList[index].title,
                       style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 18,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
                           color: AppColors.blackColor
                       )
 
@@ -87,7 +87,7 @@ class BookingSummaryScreen extends StatelessWidget {
                    getSummary.bookingSummaryList[index].value,
                      style: const TextStyle(
                          fontWeight: FontWeight.w400,
-                         fontSize: 18,
+                         fontSize: 14,
                          color: AppColors.blackColor
                      )
                  )

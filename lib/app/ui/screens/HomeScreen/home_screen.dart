@@ -19,276 +19,291 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
         body: SingleChildScrollView(
           child: Column(
-                children: [
-          Container(
-            height: size.height - kBottomNavigationBarHeight,
-            width: size.width,
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(ImageUrl.homeBackground),
-                    fit: BoxFit.cover)),
-            child: Column(
-              children: [
-                SizedBox(
-                  height: size.height * .1,
-                ),
-               //searchbar
-                Container(
-                  margin: const EdgeInsets.all(20),
-                  height: size.height * .06,
-                  width: size.width,
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(15)),
-                  child: const TextField(
-                    decoration: InputDecoration(
-                        hintText: "search",
-                        prefixIcon: Icon(Icons.search),
-                        enabledBorder: InputBorder.none,
-                        focusedBorder: InputBorder.none),
-                  ),
-                ),
-                SizedBox(
-                  height: size.height * .05,
-                ),
-                Expanded(
-                  child: Container(
-                    width: size.width,
-                    decoration: BoxDecoration(
-                        color: Colors.blue.shade50,
-                        borderRadius: const BorderRadius.only(
-                            topRight: Radius.circular(20),
-                            topLeft: Radius.circular(20))),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const SizedBox(height: 8,),
-                          Row(
+            children: [
+              Container(
+                height: size.height - kBottomNavigationBarHeight,
+                width: size.width,
+                decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage(ImageUrl.homeBackground),
+                        fit: BoxFit.cover)),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: size.height * .1,
+                    ),
+                    //searchbar
+                    Container(
+                      margin: const EdgeInsets.all(20),
+                      height: size.height * .06,
+                      width: size.width,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(15)),
+                      child: const TextField(
+                        decoration: InputDecoration(
+                            hintText: "search",
+                            prefixIcon: Icon(Icons.search),
+                            enabledBorder: InputBorder.none,
+                            focusedBorder: InputBorder.none),
+                      ),
+                    ),
+                    SizedBox(
+                      height: size.height * .05,
+                    ),
+                    Expanded(
+                      child:
+                      Container(
+                        width: size.width,
+                        decoration: BoxDecoration(
+                            color: Colors.blue.shade50,
+                            borderRadius: const BorderRadius.only(
+                                topRight: Radius.circular(20),
+                                topLeft: Radius.circular(20))),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Text(
-                                "City Name",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 18,
-                                    color: AppColors.blackColor
-                                )
-                              ),
-                              const Spacer(),
-                              Text(
-                                "View All",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 14,
-                                    color: AppColors.tealColor
-                                )
-                              ),
-                            ],
-                          ),
+                              const SizedBox(height: 8,),
+                              const Row(
+                                children: [
+                                  Text(
+                                      "City Name",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 16,
+                                          color: AppColors.blackColor
+                                      )
+                                  ),
+                                  Spacer(),
+                                  Text(
+                                    "View All",
 
-                    const SizedBox(height: 8,),
-                          //place name
-                          SizedBox(
-                            height: 80,
-                            child: ListView.builder(
-                                itemCount: placeData.homeDistrictList.length,
-                                shrinkWrap: true,
-                                scrollDirection: Axis.horizontal,
-                                itemBuilder: (context, index) {
-                                  return Padding(
-                                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                    child: Column(
-                                      children: [
-                                        Container(
-                                          height: size.height * .06,
-                                          width: size.width * .18,
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(20),
-                                            color: Colors.red,
-                                          ),
-                                          child: Image.asset(
-                                            placeData.homeDistrictList[index].image,
-                                            height: size.height * .04,
-                                            width: size.width * .18,
-                                            fit: BoxFit.fill,
-                                          ),
-                                        ),
-                                        Text(
-                                          placeData.homeDistrictList[index].name,
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.w400,
-                                                fontSize: 16,
-                                                color: AppColors.blackColor
-                                            )
-                                        )
-                                      ],
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 12,
+                                      color: AppColors.tealColor,
+                                      decoration: TextDecoration.underline,
+                                      decorationColor:  AppColors.tealColor,
                                     ),
-                                  );
-                                }),
-                          ),
-                          const Text(
-                            "Hotel Near You",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 18,
-                                  color: AppColors.blackColor
-                              )
-                          ),
-                          //card
-                          Expanded(
-                            child: GridView.builder(
-
-                              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
-                                crossAxisSpacing: 10,
-                                mainAxisSpacing: 10,
-                                childAspectRatio: 0.8,
+                                  ),
+                                ],
                               ),
-                              itemBuilder: (context, index) {
-                                return GestureDetector(
-                                  onTap: () {
-                                    Get.to(HotelDetailsScreen(
-                                      hotelName:hotelNameData.hotelNameList[index].name,
 
-                                      rate: hotelNameData.hotelNameList[index].rated.toString(),
-                                       price: hotelNameData.hotelNameList[index].price,));
-                                  },
-                                  child: Card(
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(15),
-                                    ),
-                                    elevation: 3,
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius: const BorderRadius.vertical(top: Radius.circular(15)),
-                                          child: Stack(
-                                            children: [
-                                              Image.asset(
-                                                hotelNameData.hotelNameList[index].image,
-                                                height: 120,
-                                                width: double.infinity,
+                              const SizedBox(height: 8,),
+                              ///place name
+                              SizedBox(
+                                height: 90,
+                                child: ListView.separated(
+                                  itemCount: placeData.homeDistrictList.length,
+                                  shrinkWrap: true,
+                                  scrollDirection: Axis.horizontal,
+                                  itemBuilder: (context, index) {
+                                    return SizedBox(
+                                      width: size.width * 0.16, // Move width constraint to parent
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        children: [
+                                          Container(
+                                            height: 60,
+                                            width: 60,
+                                            decoration: const BoxDecoration(
+                                                shape: BoxShape.circle
+                                            ),
+                                            child: ClipOval(
+                                              child: Image.asset(
+                                                placeData.homeDistrictList[index].image,
                                                 fit: BoxFit.cover,
                                               ),
-                                              Positioned(
-                                                top: 0,
-                                                right: 0,
-                                                child: IconButton(
-                                                  onPressed: () {},
-                                                  icon: const Icon(
-                                                    Icons.favorite,
-                                                    color: AppColors.whiteColor,
-                                                    size: 30,
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
+                                            ),
                                           ),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(6.0),
-                                          child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                hotelNameData.hotelNameList[index].name,
+                                          const SizedBox(height: 4), // Add spacing
+                                          Flexible( // Use Flexible to allow text to take remaining space
+                                            child: Text(
+                                                placeData.homeDistrictList[index].name,
+
                                                 overflow: TextOverflow.ellipsis,
-                                                maxLines: 1,
-                                                style: MyTextStyle.smallDetailsText.copyWith(
-                                                  fontSize: 16,
-                                                  fontWeight: FontWeight.bold,
-                                                ),
-                                              ),
-                                              const SizedBox(height: 4),
-                                              Row(
+                                                textAlign: TextAlign.center,
+                                                style: const TextStyle(
+                                                  fontWeight: FontWeight.w400,
+                                                  fontSize: 12,
+                                                  color: AppColors.blackColor,
+                                                )
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    );
+                                  },
+                                  separatorBuilder: (BuildContext context, int index) {
+                                    return const SizedBox(width: 6);
+                                  },
+                                ),
+                              ),
+
+
+
+                              const Text(
+                                  "Hotel Near You",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 16,
+                                      color: AppColors.blackColor
+                                  )
+                              ),
+                              //card
+                              Expanded(
+                                child: GridView.builder(
+
+                                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 2,
+                                    crossAxisSpacing: 10,
+                                    mainAxisSpacing: 10,
+                                    childAspectRatio: 0.8,
+                                  ),
+                                  itemBuilder: (context, index) {
+                                    return GestureDetector(
+                                      onTap: () {
+                                        Get.to(HotelDetailsScreen(
+                                          hotelName:hotelNameData.hotelNameList[index].name,
+
+                                          rate: hotelNameData.hotelNameList[index].rated.toString(),
+                                          price: hotelNameData.hotelNameList[index].price,));
+                                      },
+                                      child: Card(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(15),
+                                        ),
+                                        elevation: 3,
+                                        child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            ClipRRect(
+                                              borderRadius: const BorderRadius.vertical(top: Radius.circular(15)),
+                                              child: Stack(
                                                 children: [
-                                                  Container(
-                                                    height: 20,
-                                                    padding: const EdgeInsets.symmetric(horizontal: 6),
-                                                    decoration: BoxDecoration(
-                                                      color: AppColors.tealColor,
-                                                      borderRadius: BorderRadius.circular(15),
-                                                    ),
-                                                    child: const Row(
-                                                      children: [
-                                                        Icon(Icons.star, color: AppColors.whiteColor, size: 14),
-                                                        Icon(Icons.star, color: AppColors.whiteColor, size: 14),
-                                                        Icon(Icons.star, color: AppColors.whiteColor, size: 14),
-                                                      ],
-                                                    ),
+                                                  Image.asset(
+                                                    hotelNameData.hotelNameList[index].image,
+                                                    height: 120,
+                                                    width: double.infinity,
+                                                    fit: BoxFit.cover,
                                                   ),
-                                                  const SizedBox(width: 5),
-                                                  Text(
-                                                    hotelNameData.hotelNameList[index].rated.toString(),
-                                                    style: MyTextStyle.smallDetailsText.copyWith(
-                                                      fontSize: 12,
-                                                      fontWeight: FontWeight.bold,
-                                                    ),
-                                                  ),
-                                                  const SizedBox(width: 3),
-                                                  Expanded(
-                                                    child: Text(
-                                                      "(20 review)",
-                                                      overflow: TextOverflow.ellipsis,
-                                                      style: MyTextStyle.textFieldStyle.copyWith(
-                                                        fontSize: 8,
-                                                        color: Colors.grey,
+                                                  Positioned(
+                                                    top: 0,
+                                                    right: 0,
+                                                    child: IconButton(
+                                                      onPressed: () {},
+                                                      icon: const Icon(
+                                                        Icons.favorite,
+                                                        color: AppColors.whiteColor,
+                                                        size: 30,
                                                       ),
                                                     ),
                                                   ),
                                                 ],
                                               ),
-                                               const SizedBox(height: 4),
-                                              Row(
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.all(6.0),
+                                              child: Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
-                                                    "Price: ",
-                                                      style: TextStyle(
-                                                          fontWeight: FontWeight.w500,
-                                                          fontSize: 16,
-                                                          color: AppColors.blackColor
-                                                      )
+                                                    hotelNameData.hotelNameList[index].name,
+                                                    overflow: TextOverflow.ellipsis,
+                                                    maxLines: 1,
+                                                    style: MyTextStyle.smallDetailsText.copyWith(
+                                                      fontSize: 16,
+                                                      fontWeight: FontWeight.bold,
+                                                    ),
+                                                  ),
+                                                  const SizedBox(height: 4),
+                                                  Row(
+                                                    children: [
+                                                      Container(
+                                                        height: 20,
+                                                        padding: const EdgeInsets.symmetric(horizontal: 6),
+                                                        decoration: BoxDecoration(
+                                                          color: AppColors.tealColor,
+                                                          borderRadius: BorderRadius.circular(15),
+                                                        ),
+                                                        child: const Row(
+                                                          children: [
+                                                            Icon(Icons.star, color: AppColors.whiteColor, size: 14),
+                                                            Icon(Icons.star, color: AppColors.whiteColor, size: 14),
+                                                            Icon(Icons.star, color: AppColors.whiteColor, size: 14),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                      const SizedBox(width: 5),
+                                                      Text(
+                                                        hotelNameData.hotelNameList[index].rated.toString(),
+                                                        style: MyTextStyle.smallDetailsText.copyWith(
+                                                          fontSize: 12,
+                                                          fontWeight: FontWeight.bold,
+                                                        ),
+                                                      ),
+                                                      const SizedBox(width: 3),
+                                                      Expanded(
+                                                        child: Text(
+                                                          "(20 review)",
+                                                          overflow: TextOverflow.ellipsis,
+                                                          style: MyTextStyle.textFieldStyle.copyWith(
+                                                            fontSize: 8,
+                                                            color: Colors.grey,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  const SizedBox(height: 4),
+                                                  Row(
+                                                    children: [
+                                                      Text(
+                                                          "Price: ",
+                                                          style: TextStyle(
+                                                              fontWeight: FontWeight.w500,
+                                                              fontSize: 16,
+                                                              color: AppColors.blackColor
+                                                          )
+                                                      ),
+
+                                                      Text(
+                                                          hotelNameData.hotelNameList[index].price,
+                                                          style: TextStyle(
+                                                              fontWeight: FontWeight.w700,
+                                                              fontSize: 18,
+                                                              color: AppColors.tealColor
+                                                          )
+                                                      ),
+                                                    ],
                                                   ),
 
-                                                  Text(
-                                                     hotelNameData.hotelNameList[index].price,
-                                                      style: TextStyle(
-                                                          fontWeight: FontWeight.w700,
-                                                          fontSize: 18,
-                                                          color: AppColors.tealColor
-                                                      )
-                                                  ),
                                                 ],
                                               ),
-
-                                            ],
-                                          ),
+                                            ),
+                                          ],
                                         ),
-                                      ],
-                                    ),
-                                  ),
-                                );
-                              },
-                            ),
-                          )
+                                      ),
+                                    );
+                                  },
+                                ),
+                              )
 
 
 
-                        ],
+                            ],
+                          ),
+                        ),
                       ),
                     ),
-                  ),
+                  ],
                 ),
-              ],
-            ),
-          ),
-                ],
               ),
+            ],
+          ),
         ));
   }
 }
-
-
-
